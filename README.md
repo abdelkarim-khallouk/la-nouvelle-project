@@ -3,6 +3,6 @@ News website with PHP &amp; MySQL
 
 http://www.lanouvelle.ma/
 
-Font-end part :
+Font-end part at :
 https://github.com/abdelkarim-khallouk/la-nouvelle-project-frontend-part
 
