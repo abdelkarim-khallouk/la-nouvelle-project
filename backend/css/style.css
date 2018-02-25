@@ -1,0 +1,96 @@
+@charset "utf-8";
+/* CSS Document */
+
+h3{
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:30px;
+	font-weight:lighter;
+	text-transform:uppercase;
+	color:#06F;
+}
+div{
+	background-color:#06F;
+	color:#FFF;
+	margin-left:30px;
+	width:200px;
+	text-align:center;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:13px;
+	margin-top:25px;
+	text-transform:uppercase;
+	border:1px #333333 solid;
+
+}
+.annuler{
+	background-color:#FF0000
+}
+#form{
+	width:500px;
+	height:400px;
+	background-color:#CCC;
+}
+#form form table{
+	width:500px;
+	height:300px;
+}
+#form form table label{
+	font-size:15px;
+}
+#form form select{
+	width:200px;
+	height:30px;
+	background-color:#333;
+	color:#FFFFFF
+}
+#form form input{
+	width:200px;
+	height:30px;
+	background-color:#999;
+	color:#FFFFFF;
+	border:0px;
+	
+}
+#form form .btn{
+	width:200px;
+	height:30px;
+	background-color:#0066FF;
+	border:1px #333333 solid;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	text-transform:uppercase;
+}
+#erreur{
+	background-color:#FF0000;
+	color:#FFFFFF;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:12px;
+	border:1px #fff dashed;
+	width:400px;
+}
+
+#formEditer{
+	width:auto;
+	height:auto;
+	padding:15px;
+	margin-right:100px;
+	background-color:#CCC;
+}
+#formEditer table{
+	width:100%;		
+}
+#formEditer table .entete{
+	background-color:#039;
+	border:0px
+}
+#formEditer table tr {
+	background-color:#333;
+	border-right:1px #FFFFFF solid;
+	color:#fff;
+}
+#formEditer table a{
+	color:#fff;
+	text-decoration:none
+}
+#formEditer table a:hover{
+	color:#999;
+	text-decoration:underline;
+}
