@@ -207,7 +207,9 @@
 
  
         	<!-- DEBUT FOOTER -->
-        		<!-- EXERCICE -->
+		<div class="footer">
+			   
+		</dive>
         	<!-- FIN FOOTER-->
     	</div>
     	<!-- FIN CONTENEUR -->
