@@ -7,7 +7,7 @@
 		private $host="localhost";
 		private $user="root";
 		private $pwd="";
-		private $dbname="lanouvelledb";
+		private $dbname="zend_db";
 		private $pdo; //déffinion de la variable
 		
 		public function __construct(){
@@ -17,7 +17,7 @@
 		#creation de service getPdo();
 		
 		public function getPdo(){
-			#PDO("mysql:host='localhost';dbname='lanouvelledb','root',''");
+			#PDO("mysql:host='localhost';dbname='zend_db','root',''");
 			try{
 				
 			$this->pdo=new PDO("mysql:host={$this->host};dbname=".$this->dbname,$this->user,$this->pwd);

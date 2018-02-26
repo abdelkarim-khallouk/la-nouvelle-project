@@ -1,13 +1,15 @@
+
 <?php
 session_start();
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
 <html>
 <head>
-     <meta http-equiv="Content-Type" content="text/html; charset=Cp1252">
-     <title>Administration</title>
-     <link href="css/style.css" rel="stylesheet" type="text/css" />
-     <script type="text/javascript" src="js/validation.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=Cp1252">
+<title>Administration</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/validation.js"></script>
+
 </head>
 
     <body>
@@ -27,6 +29,7 @@ session_start();
     		
     	}
     
-    ?>
+	?>
     </body>
+    
 </html>

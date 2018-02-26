@@ -1,31 +1,33 @@
 <?php
 
-#cette class permet de fournir les méthodes de CRUD pour la table utilsateur
-	
-	class Utilisateur extends Connexion{
+#cette class permet de fournir les méthodes de CRUD pour la table auteur
+
+	class Auteur extends Connexion {
 		
 		#définition de la structure de la table
 		
-		private $table="utilisateur";
-		private $idUtilisateur;
-		private $emailUtilisateur;
-		private $pwdUtilisateur;
-		private $nomUtilisateur;
+		private $table="auteur";
+		private $idAuteur;
+		private $nomAuteur;
+		private $prenomAuteur;
+		private $emailAuteur;
+
 		
 		#définition des noms de colonnes
 		
-		private $idCol="id_utilisateur";
-		private $emailCol="email_utilisateur";
-		private $pwdCol="pwd_utilisateur";
-		private $nomCol="nom_utilisateur";
+		private $idCol="id_auteur";
+		private $nomCol="nom_auteur";
+		private $prenomCol="prenom_auteur";
+		private $emailCol="email_auteur";
+
+
 		
-		public function __construct($email=NULL,
-									 $pwd=NULL, $nom=NULL){
+		public function __construct( $nom=NULL, $prenom=NULL, $email=NULL ){
 			
-			#$this->idUtilisateur=$id;
-			$this->emailUtilisateur=$email;
-			$this->pwdUtilisateur= $pwd;
-			$this->nomUtilisateur=$nom;
+			#$this->idAuteur=$id;
+			$this->emailAuteur= $email;
+			$this->prenomAuteur= $prenom;
+			$this->nomAuteur= $nom;
 			
 		}
 		
@@ -40,64 +42,64 @@
 				return true;
 			}
 			else{
-				return false;	
+				return false;
 			}
 		}
 		
-		#CREATION DU CRUD
+		
+	#CREATION DU CRUD
 		
 		#CREATE & UPDATE
 		
 		public function saveOrUpdate($id=NULL){ 
-			
-			if($this->checkValue($this->emailCol, $this->emailUtilisateur) == false)
+			if($this->checkValue($this->emailCol, $this->emailAuteur) == false)
 			{
 			#SAVE
 			if($id == null ){
 				
 				#statement veut dire requete SQL
 				$statement ="INSERT INTO {$this->table} VALUES ('',
-								'$this->emailUtilisateur',
-								'$this->pwdUtilisateur',
-								'$this->nomUtilisateur')";
-				#echo $statement."</br>";
+								'$this->nomAuteur',
+								'$this->prenomAuteur',
+								'$this->emailAuteur')";
+				echo $statement."</br>";
 				#echo 1;
 			}else{
 				
 				#UPDATE
 				$statement="UPDATE {$this->table} SET
- 					$this->emailCol= '$this->emailUtilisateur',	
- 					$this->pwdCol= '$this->pwdUtilisateur',
- 					$this->nomCol= '$this->nomUtilisateur',
+ 					$this->nomCol= '$this->nomAuteur',	
+ 					$this->prenomCol= '$this->prenomAuteur',
+ 					$this->emailCol= '$this->emailAuteur',
  					WHERE $this->idCol=".$id;
  					#echo 2;
 			}
+			
 			#Execution de le requete
 			try{
 			
 				$queryresult= $this->getPdo()->query($statement);
 				#retourner le resultat de la requete
-				return $queryresult;			
+				return $queryresult;
+			
 			
 			}catch(Exception $e){
 				echo("Erreur SaveOrUpdate:".$e->getMessage());
 			}
 		}else{
 			
-			#echo("l'adresse email est utilisé");
+			#echo("Cet auteur existe dêja !!");
 			return "exist";
 			#echo 3;
-			
 		}
 			
-			
-			
-		}
+		} #FIN SAVE or UPDATE
+		
 		
 		#READ
-		public function findUtilisateur($id=null){
+		public function findAuteur($id=null){
 			if($id==null){
-				#recupération de tous les utilisateurs
+				#recupération de tous les auteurs
 				$statement ="SELECT * FROM {$this->table}";
 			}else{
 				
@@ -118,9 +120,11 @@
 		
 		#DELETE
 		
-		public function deleteUtilisateur($id){
+		public function deleteAuteur($id){
+			
 			$statement="DELETE FROM {$this->table} WHERE {$this->idCol}=".$id;
-				#Exécution de la requete
+				
+			#Exécution de la requete
 			try{
 					
 				$queryresult= $this->getPdo()->query($statement);
@@ -131,25 +135,6 @@
 			}catch(Exception $e){
 				echo("Erreur SaveOrUpdate:".$e->getMessage());
 			}
-		}
-		
-		public function loginUtilisateur(){
-			
-			$statement="SELECT * FROM {$this->table} WHERE {$this->emailCol}='{$this->emailUtilisateur}' AND 
-															{$this->pwdCol}='{$this->pwdUtilisateur}'";
-			try{
-			$queryresult= $this->getPdo()->query($statement);
-			#retourner le résultat de la requete
-			#echo $queryresult->fetchColumn()."</br>";
-			if($queryresult->fetchColumn() > 0){
-					return true;
-				}
-				else{
-					return false;									
-					}
-				}catch(Exception $e){
-						echo("Erreur SaveOrUpdate:".$e->getMessage());
-				}			
 		}
 		
 	}

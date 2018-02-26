@@ -41,15 +41,15 @@
 	  				</tr>
 	  				<tr>
 	  					<td><label>Email</label></td>
-	  					<td><input type="text" name="email"  value=<?php echo $email;?> /></td>
+	  					<td><input type="text" name="email"  value="<?php echo $email;?>" ></td>
 	  				</tr>
 	  				<tr>
 	  					<td><label>Password</label></td>
-	  					<td><input type="password" name="pwd" value="<?php echo $pwd;?>" /></td>
+	  					<td><input type="password" name="pwd" value="<?php echo $pwd;?>" ></td>
 	  				</tr>
 	  				<tr>
 	  					<td><label>Nom</label></td>
-	  					<td><input type="text" name="nom" value="<?php echo $nom;?>" /></td>
+	  					<td><input type="text" name="nom" value="<?php echo $nom;?>" ></td>
 	  				</tr>
 	  				<tr>
 	  					<td colspan="2" align="center">

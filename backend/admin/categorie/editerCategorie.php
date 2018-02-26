@@ -1,10 +1,11 @@
 <?php 
 
-	require_once '../../module/Connexion.php';
-	require_once '../../module/models/utilisateur/Utilisateur.php';
+	require_once '../../module/Connexion.php';	
+	require_once '../../module/models/categorie/Categorie.php';
 	
-	$utilisateur=new Utilisateur();
-	$list=$utilisateur->findUtilisateur();
+	
+	$categorie=new Categorie();
+	$list=$categorie->findCategorie();
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
@@ -17,10 +18,10 @@
 </head>
 
     <body>
-    <h3>Bienvenu au panel de gestion: Edition des utilisateur</h4>
+    <h3>Bienvenu au panel de gestion: Edition des categorie</h4>
     
     <a href="#">
-	<div><p>Editer utilisateur</p></div>
+	<div><p>Editer categorie</p></div>
 	</a>
 	
 	<a href="#">
@@ -32,17 +33,17 @@
    		<table>
    		
    			<tr class="entete">
-   				<td>ID</td><td>EMAIL</td><td>Action</td>
+   				<td>ID</td><td>NOM</td><td>Action</td>
    			</tr>
    		
    		<?php 
-   			while($data = $list->fetch()){
+   			while( $data = $list->fetch() ){
    				echo('<tr>');
-   					echo('<td>'.$data["id_utilisateur"].'</td>');
-   					echo('<td>'.$data["email_utilisateur"].'</td>');
+   					echo('<td>'.$data["id_categorie"].'</td>');
+   					echo('<td>'.$data["nom_categorie"].'</td>');
    					echo('<td>');
-   						echo("<a href='../../actions/utilisateur/deleteAction.php?id=".$data["id_utilisateur"]."'>Supprimer</a> / ");
-   						echo("<a href='adminUtilisateur.php?id=".$data["id_utilisateur"]."'>Modifier</a> / ");
+   						echo("<a href='../../actions/categorie/deleteAction.php?id=".$data["id_categorie"]."'>Supprimer</a> / ");
+   						echo("<a href='adminCategorie.php?id=".$data["id_categorie"]."'>Modifier</a> / ");	#	
    					echo('</td>');
    					
    				echo('</tr>');
