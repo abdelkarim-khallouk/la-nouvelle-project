@@ -25,7 +25,6 @@ function validation(form,type){
 		
 		if(form.pwd.value.length<6) erreur +="le mot de passe doit etre sup à 6 chars <br/>";
 		
-		
 	}
 	else if(type=="ajoutCategorieForm"){
 		
@@ -79,8 +78,7 @@ function validation(form,type){
 		{
 		form.submit();
 		}
-
-			
+		
 }
 
 
