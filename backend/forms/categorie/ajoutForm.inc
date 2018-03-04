@@ -1,32 +1,33 @@
 <?php 
 	
-	# ajoutForm.inc pour l'ajout des categories
-	
 	require_once '../../module/Connexion.php';
 	require_once '../../module/models/categorie/Categorie.php';
 	
-	$id=(isset($_GET["id"]))?$_GET["id"]:"";		# !!!
+	$id=(isset($_GET["id"]))?$_GET["id"]:"";
 	
 	if($id != ""){
 		
 		#valeur adapté pour transformer le formulaire ajouForm en un Formulaire d'update
 		$categorie= new Categorie();
-		#récupérer le categorie dans la meme instruction
-		$list = $categorie->findCategorie();
+		#récupérer l'utilisateur dans la meme instruction
+		$list= $categorie->findCategorie();
 		
 		while($data = $list->fetch()){
 		
-		$nom = $data["nom_categorie"];
+		$nom_categorie = $data["nom_categorie"];
+		
 		}
-		$action = "updateAction";										
+		$action = "updateAction";
 		$bouton = "Modifier categorie";
 	}else
 	{
 		#valeur par défaut pour le formulaire ajoutForm
-		$nom = "";
+		$nom_categorie = "";
+		
 		
 		$action = "ajoutAction";
 		$bouton = "Ajouter categorie";
+		
 	}
 
 ?>
@@ -37,9 +38,10 @@
 	  					<td colspan=2 id="bloc_erreur"></td>
 	  				</tr>
 	  				<tr>
-	  					<td><label>Nom: </label></td>
-	  					<td><input type="text" name="nom" value="<?php echo $nom;?>" /></td>
+	  					<td><label>Categorie</label></td>
+	  					<td><input type="text" name="cat"  value=<?php echo $nom_categorie;?> ></td>
 	  				</tr>
+	  				
 	  				<tr>
 	  					<td colspan="2" align="center">
 	  						

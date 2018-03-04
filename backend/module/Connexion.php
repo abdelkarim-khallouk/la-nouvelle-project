@@ -17,7 +17,7 @@
 		#creation de service getPdo();
 		
 		public function getPdo(){
-			#PDO("mysql:host='localhost';dbname='zend_db','root',''");
+			#PDO("mysql:host='localhost';dbname='lanouvelledb','root',''");
 			try{
 				
 			$this->pdo=new PDO("mysql:host={$this->host};dbname=".$this->dbname,$this->user,$this->pwd);

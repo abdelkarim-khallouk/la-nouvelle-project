@@ -1,8 +1,7 @@
 <?php 
-
 	require_once '../../module/Connexion.php';
-	require_once '../../module/models/auteur/Auteur.php';			
-
+	require_once '../../module/models/auteur/Auteur.php';
+	
 	$auteur=new Auteur();
 	$list=$auteur->findAuteur();
 ?>
@@ -17,10 +16,10 @@
 </head>
 
     <body>
-    <h3>Bienvenu au panel de gestion: Edition des auteurs</h4>
+    <h3>Bienvenu au panel de gestion: Edition Auteur</h4>
     
     <a href="#">
-	<div><p>Editer un auteur</p></div>
+	<div><p>Editer Auteur</p></div>
 	</a>
 	
 	<a href="#">
@@ -32,7 +31,7 @@
    		<table>
    		
    			<tr class="entete">
-   				<td>ID</td><td>NOM</td><td>PRENOM</td><td>EMAIL</td><td>Action</td>
+   				<td>ID</td><td>Nom</td><td>Prenom</td><td>Action</td>
    			</tr>
    		
    		<?php 
@@ -41,11 +40,10 @@
    					echo('<td>'.$data["id_auteur"].'</td>');
    					echo('<td>'.$data["nom_auteur"].'</td>');
    					echo('<td>'.$data["prenom_auteur"].'</td>');
-   					echo('<td>'.$data["email_auteur"].'</td>');
    					echo('<td>');
    						echo("<a href='../../actions/auteur/deleteAction.php?id=".$data["id_auteur"]."'>Supprimer</a> / ");
-   						echo("<a href='adminAuteur.php?id=".$data["id_auteur"]."'>Modifier</a> / ");							
-   					echo('</td>');
+   						echo("<a href='adminAuteur.php?id=".$data["id_auteur"]."'>Modifier</a> / ");
+   						echo('</td>');
    					
    				echo('</tr>');
    			}

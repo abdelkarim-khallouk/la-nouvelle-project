@@ -1,6 +1,4 @@
-
-
-        	<center>
+<center>
             	<p>Enregistrez-vous et</p>
                 <p>Recevez nos</p>
                 <p class="big">Newsletter</p>
@@ -9,10 +7,10 @@
                     <input type="text" value="Email" class="email"/>
                     <input type="submit" value="Se connecter" class="connecter"/>
                 </form>
-                <p class="forgot">Mot de passe oublié ?</p>
+                <p class="forgot">Mot de passe oubliÃ© ?</p>
                 <a href="#">
                     <div class="creer">
-                        Créer un compte
+                        CrÃ©er un compte
                     </div>
                 </a>
             </center>

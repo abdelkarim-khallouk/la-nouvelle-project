@@ -1,7 +1,5 @@
 <?php
-	
 	#formulaire d'ajout des articles
-	
 	require_once "../../module/Connexion.php";
 	require_once("../../module/models/categorie/Categorie.php");
 	require_once("../../module/models/auteur/Auteur.php");
@@ -17,12 +15,13 @@
 
 <div id="form">
 
-	<form name="ajoutArticleForm" action="../../actions/article/ajouterAction.php" method="post" enctype="multipart/form-data">
+	<form name="creerArticleForm" action="../../actions/article/ajoutAction.php" method="post" enctype="multipart/form-data">
 		<table>
 			<tr>
 				<td><label>Titre</label></td>
 				<td><input type="text" name="titreArticle"/></td>
 			</tr>
+			
 			<tr>
 				<td><label>Contenu</label></td>
 				<td>
@@ -62,8 +61,8 @@
 				<td><input type="file" name="imageArticle"/></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="button" value="Créer" 
-						onclick="validation(ajoutArticleForm,'ajoutArticleForm')"/></td>
+				<td colspan="2"><input type="submit" value="Créer" 
+						"/></td>
 			</tr>		
 		</table>
 		<input type="hidden" name="MAX_FILE_SIZE" value="100000"/>	

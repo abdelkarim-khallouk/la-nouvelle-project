@@ -1,10 +1,9 @@
-
-        	<!-- DEBUT IMAGE MAX-->
+<!-- DEBUT IMAGE MAX-->
             <div id="image_max">
                 <div id="image">
                     <img src="images/image_slider.jpg"/>
                 </div>
-                <p>La résolution de l'ONU, "premier signe d'espoir en syrie"</p>
+                <p>La rÃ©solution de l'ONU, "premier signe d'espoir en syrie"</p>
                 <div id="titre_bg">
                 </div>
             </div>
@@ -20,6 +19,5 @@
             <!-- FIN IMAGE MIN-->
             
             <div id="red_info">
-            	<p>Dernières nouvelles</p>
+            	<p>DerniÃ¨res nouvelles</p>
             </div>
-

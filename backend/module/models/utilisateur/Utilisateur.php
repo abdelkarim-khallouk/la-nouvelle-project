@@ -19,8 +19,7 @@
 		private $pwdCol="pwd_utilisateur";
 		private $nomCol="nom_utilisateur";
 		
-		public function __construct($email=NULL,
-									 $pwd=NULL, $nom=NULL){
+		public function __construct($email=NULL,$pwd=NULL,$nom=NULL){
 			
 			#$this->idUtilisateur=$id;
 			$this->emailUtilisateur=$email;
@@ -37,11 +36,14 @@
 			#echo $queryresult->fetchColumn()."</br>";
 			if($queryresult->fetchColumn() > 0)
 			{
+				
 				return true;
 			}
 			else{
-				return false;	
+				return false;
+				
 			}
+			
 		}
 		
 		#CREATION DU CRUD
@@ -49,8 +51,7 @@
 		#CREATE & UPDATE
 		
 		public function saveOrUpdate($id=NULL){ 
-			
-			if($this->checkValue($this->emailCol, $this->emailUtilisateur) == false)
+			if($this->checkValue($this->emailCol, $this->emailUtilisateur)== false)
 			{
 			#SAVE
 			if($id == null ){
@@ -68,7 +69,7 @@
 				$statement="UPDATE {$this->table} SET
  					$this->emailCol= '$this->emailUtilisateur',	
  					$this->pwdCol= '$this->pwdUtilisateur',
- 					$this->nomCol= '$this->nomUtilisateur',
+ 					$this->nomCol= '$this->nomUtilisateur'
  					WHERE $this->idCol=".$id;
  					#echo 2;
 			}
@@ -77,7 +78,8 @@
 			
 				$queryresult= $this->getPdo()->query($statement);
 				#retourner le resultat de la requete
-				return $queryresult;			
+				return $queryresult;
+			
 			
 			}catch(Exception $e){
 				echo("Erreur SaveOrUpdate:".$e->getMessage());
@@ -101,7 +103,7 @@
 				$statement ="SELECT * FROM {$this->table}";
 			}else{
 				
-				$statement="SELECT * FROM {$this->table} WHERE {$this->isCol}=".$id;
+				$statement="SELECT * FROM {$this->table} WHERE {$this->idCol}=".$id;
 			}
 			
 			try{
@@ -141,16 +143,22 @@
 			$queryresult= $this->getPdo()->query($statement);
 			#retourner le résultat de la requete
 			#echo $queryresult->fetchColumn()."</br>";
-			if($queryresult->fetchColumn() > 0){
+			if($queryresult->fetchColumn() > 0)
+				{
 					return true;
+					
 				}
 				else{
-					return false;									
+					return false;
+					
+															
 					}
-				}catch(Exception $e){
+					}catch(Exception $e){
 						echo("Erreur SaveOrUpdate:".$e->getMessage());
-				}			
+					}		
+			
 		}
+			
 		
 	}
 

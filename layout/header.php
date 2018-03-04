@@ -1,5 +1,3 @@
-
-
     
         	<!-- DEBUT LOGO -->
         	<div id="logo">

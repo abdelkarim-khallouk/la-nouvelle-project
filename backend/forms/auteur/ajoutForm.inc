@@ -1,7 +1,5 @@
 <?php 
 	
-	#formulaire d'ajout des auteurs
-
 	require_once '../../module/Connexion.php';
 	require_once '../../module/models/auteur/Auteur.php';
 	
@@ -23,7 +21,6 @@
 		}
 		$action = "updateAction";
 		$bouton = "Modifier auteur";
-		
 	}else
 	{
 		#valeur par défaut pour le formulaire ajoutForm

@@ -41,7 +41,7 @@
 	  				</tr>
 	  				<tr>
 	  					<td><label>Email</label></td>
-	  					<td><input type="text" name="email"  value="<?php echo $email;?>" ></td>
+	  					<td><input type="text" name="email"  value=<?php echo $email;?> ></td>
 	  				</tr>
 	  				<tr>
 	  					<td><label>Password</label></td>

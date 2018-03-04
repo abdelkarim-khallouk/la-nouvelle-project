@@ -1,5 +1,4 @@
 <?php 
-
 	require_once '../../module/Connexion.php';
 	require_once '../../module/models/utilisateur/Utilisateur.php';
 	
@@ -17,7 +16,7 @@
 </head>
 
     <body>
-    <h3>Bienvenu au panel de gestion: Edition des utilisateur</h4>
+    <h3>Bienvenu au panel de gestion: Edition sUtilisateur</h4>
     
     <a href="#">
 	<div><p>Editer utilisateur</p></div>
@@ -43,7 +42,7 @@
    					echo('<td>');
    						echo("<a href='../../actions/utilisateur/deleteAction.php?id=".$data["id_utilisateur"]."'>Supprimer</a> / ");
    						echo("<a href='adminUtilisateur.php?id=".$data["id_utilisateur"]."'>Modifier</a> / ");
-   					echo('</td>');
+   						echo('</td>');
    					
    				echo('</tr>');
    			}

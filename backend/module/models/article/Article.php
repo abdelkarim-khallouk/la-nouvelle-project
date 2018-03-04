@@ -35,7 +35,9 @@
 			$this->imageArticle=$data["image"];
 			$this->categorie=$data["categorie"];
 			$this->auteur=$data["auteur"];
-	
+			
+			
+			
 			
 		}
 		
@@ -63,7 +65,7 @@
 		
 		public function saveOrUpdate($id=NULL){ 
 			//if($this->checkValue($this->emailCol, $this->emailUtilisateur)== false)
-			
+			{
 			#SAVE
 			if($id == null ){
 				
@@ -112,21 +114,25 @@
 			
 			
 			
-		
+		}
 		
 		#READ
-		public function findArticle($by,$byvalue,$limit){
-			
+		public function findArticle($by=null,$byvalue=null,$limit=null){
+			#$by = le champ avec le quelle nous allons effectuer la recherche 
+			#byvalue= la valeur utiliser lors de la recherche
+			#Définition du filtre de selection (clause by)
+			$limitsql=($limit!=null)?"limit 0,".$limit:"";
 			if($by!=null && $byvalue!=null){
 			if($by=="id"){
 				#recupération de tous les utilisateurs
-				$statement ="SELECT * FROM {$this->table}  WHERE {$this->idCol}='$by' 
-								ORDER BY {$this->idCol} DESC limit 0,$limit "  ;
+				$statement ="SELECT * FROM {$this->table}  WHERE {$this->idCol}='$byvalue' 
+								ORDER BY {$this->idCol} DESC ".$limitsql   ;
 			}
 			else if($by=="categorie"){
 				
-				$statement ="SELECT * FROM {$this->table}  WHERE {$this->categorieCol}='$by' 
-								ORDER BY {$this->idCol} DESC limit 0,$limit "  ;
+				$statement ="SELECT * FROM {$this->table}  WHERE {$this->categorieCol}='$byvalue' 
+								ORDER BY {$this->idCol} DESC ".$limitsql   ;
+				#echo $statement;
 			}
 			
 			
@@ -166,6 +172,8 @@
 			}
 		}
 		
+		
+			
 		
 	}
 

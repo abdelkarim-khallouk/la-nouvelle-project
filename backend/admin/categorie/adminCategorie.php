@@ -8,7 +8,7 @@
 </head>
 
     <body>
-    <h3>Bienvenu au gestion des categories</h4>
+    <h3>Bienvenu au de gestion: Categorie</h4>
     
     <a href="editerCategorie.php">
 	<div><p>Editer categorie</p></div>
@@ -17,10 +17,10 @@
 	<a href="#">
 		<div class="annuler"><p>Annuler</p></div>
 	</a>
-	<h4>Ajouter un categorie</h4>
+	<h4>Ajouter une categorie</h4>
 	
     <?php
-		include_once("../../forms/categorie/ajoutForm.inc");					
+		include_once("../../forms/categorie/ajoutForm.inc");
 	?>
     </body>
     

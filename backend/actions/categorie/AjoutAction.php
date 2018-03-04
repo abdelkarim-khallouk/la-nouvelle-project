@@ -1,18 +1,15 @@
 <?php
-	
-	# POUR L'AJOUT DES CATEGORIES
-
 	session_start();
 	require_once '../../module/Connexion.php';
 	require_once '../../module/models/categorie/Categorie.php';
 	
-
-	$nom = (isset($_POST["nom"]))?$_POST["nom"]:"";
-
-	if( $nom !="" ){
+	
+	$cat = (isset($_POST["cat"]))?$_POST["cat"]:"";
+	
+	if($cat !=""){
 		#verification de l'authentification
 		
-		$categorie = new Categorie( $nom);
+		$categorie=new Categorie($cat);
 		$resultat= $categorie->saveOrUpdate();
 		
 		if($resultat=="exist"){

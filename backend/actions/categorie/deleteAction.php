@@ -1,5 +1,4 @@
 <?php 
-
 	require_once '../../module/Connexion.php';
 	require_once '../../module/models/categorie/Categorie.php';
 	
@@ -8,6 +7,6 @@
 	if($id != "")
 			$categorie = new Categorie();
 			$resultat = $categorie->deleteCategorie($id);
-			header("location:../../admin/utilisateur/editerUtilisateur.php");
+			header("location:../../admin/categorie/editerCategorie.php");
 	
 ?>

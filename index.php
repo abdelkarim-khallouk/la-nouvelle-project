@@ -1,14 +1,15 @@
 <?php 
+#récupération des parametres de navigations
+#index.php?page=contact
 
 require_once ("backend/module/Connexion.php");
 
-	#récupération des param de  navigation
-	#index.php?page=contact
-	if (isset($_GET["page"])){
-		$page = $_GET["page"];
-	}else {
-		$page = "home";
-	}
+
+if(isset($_GET["page"]))
+	$page=$_GET["page"];
+	else 
+		$page="home";
+
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -28,44 +29,43 @@ require_once ("backend/module/Connexion.php");
 	<!-- DEBUT CONTENEUR -->
 	<div id="conteneur">
     	<!-- DEBUT HEADER -->
-        <div id="header">       	
-        	
-        	<?php  include_once ("layout/header.php"); ?>
-
+        <div id="header">
+    	
+    	<?php  include_once ("layout/header.php"); ?>
+            
         </div>
         <!-- FIN HEADER-->
         
         <!-- DEBUT MENU-->
         <div id="menu">
         	
-        	<?php include_once("layout/menu.php"); ?>
-
+        	<?php  include_once ("layout/menu.php"); ?>
+        	
         </div>
         <!-- FIN MENU-->
         
         <!-- DEBUT SLIDER -->
         <div id="slider">
-
-        	<?php include_once("layout/slider.php"); ?>
-
+        	
+        	<?php  include_once ("layout/slider.php"); ?>
+        	
+        	
         </div>
         <!-- FIN SLIDER-->
         
       	<!-- DEBUT NEWSLETTER -->
         <div id="newsletter">
         	
-        	<?php include_once("layout/newsletter.php"); ?>
-
+        	 <?php  include_once ("layout/newsletter.php"); ?>
+        	
         </div>
         <!-- FIN NEWSLETTER-->
-
-<!--
-	<!-- DEBUT CONTENT-->
-<!--	<div id="content">						 !!!!! <div id="content"> -->
-			<?php include_once ("pages/$page.php"); ?>    
-
-    </div>
+        <!-- DEBUT RUBRIQUE -->
+        
+        <?php  include_once ("pages/$page.php"); ?>
+        
+        </div>
     <!-- FIN CONTENEUR -->
-    		
 </body>
 </html>
+       	

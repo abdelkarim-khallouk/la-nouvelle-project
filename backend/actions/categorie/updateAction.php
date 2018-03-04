@@ -1,17 +1,16 @@
 <?php
-
 	session_start();
 	require_once '../../module/Connexion.php';
 	require_once '../../module/models/categorie/Categorie.php';
 	
-
-	$nom = (isset($_POST["nom"]))?$_POST["nom"]:"";
+	
+	$cat = (isset($_POST["cat"]))?$_POST["cat"]:"";
+	
 	$id = (isset($_POST["id"]))?$_POST["id"]:"";
-
-	if( $nom!="" ){
+	if($cat !=""){
 		#verification de l'authentification
 		
-		$categorie=new Categorie( $nom);
+		$categorie=new Categorie($cat);
 		$resultat= $categorie->saveOrUpdate($id);
 		
 		if($resultat=="exist"){
@@ -19,7 +18,9 @@
 			
 		}
 		
-		else if($resultat){
+		else 
+			if($resultat){
+			#creation de session pour l'utilisateur connecté
 			
 			#redirection vers la page backend/index.php
 			#ne jamais utiliser de balise html avant la fonction header
@@ -33,5 +34,6 @@
 		#traitement des instructions
 		echo 'test';
 	}
+
 
 ?>

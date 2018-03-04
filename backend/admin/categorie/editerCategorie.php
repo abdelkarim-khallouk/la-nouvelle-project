@@ -1,8 +1,6 @@
 <?php 
-
-	require_once '../../module/Connexion.php';	
+	require_once '../../module/Connexion.php';
 	require_once '../../module/models/categorie/Categorie.php';
-	
 	
 	$categorie=new Categorie();
 	$list=$categorie->findCategorie();
@@ -18,7 +16,7 @@
 </head>
 
     <body>
-    <h3>Bienvenu au panel de gestion: Edition des categorie</h4>
+    <h3>Bienvenu au panel de gestion: Edition Categorie</h4>
     
     <a href="#">
 	<div><p>Editer categorie</p></div>
@@ -33,18 +31,18 @@
    		<table>
    		
    			<tr class="entete">
-   				<td>ID</td><td>NOM</td><td>Action</td>
+   				<td>ID</td><td>CATEGORIE</td><td>Action</td>
    			</tr>
    		
    		<?php 
-   			while( $data = $list->fetch() ){
+   			while($data = $list->fetch()){
    				echo('<tr>');
    					echo('<td>'.$data["id_categorie"].'</td>');
    					echo('<td>'.$data["nom_categorie"].'</td>');
    					echo('<td>');
    						echo("<a href='../../actions/categorie/deleteAction.php?id=".$data["id_categorie"]."'>Supprimer</a> / ");
-   						echo("<a href='adminCategorie.php?id=".$data["id_categorie"]."'>Modifier</a> / ");	#	
-   					echo('</td>');
+   						echo("<a href='adminCategorie.php?id=".$data["id_categorie"]."'>Modifier</a> / ");
+   						echo('</td>');
    					
    				echo('</tr>');
    			}

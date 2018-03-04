@@ -8,7 +8,7 @@
 </head>
 
     <body>
-    <h3>Bienvenu au gestion: Auteurs</h4>
+    <h3>Bienvenu au de gestion: Auteur</h4>
     
     <a href="editerAuteur.php">
 	<div><p>Editer auteur</p></div>
@@ -20,7 +20,7 @@
 	<h4>Ajouter un auteur</h4>
 	
     <?php
-		include_once("../../forms/auteur/ajoutForm.inc");				
+		include_once("../../forms/auteur/ajoutForm.inc");
 	?>
     </body>
     

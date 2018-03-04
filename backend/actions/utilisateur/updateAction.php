@@ -8,13 +8,13 @@
 	$pwd = (isset($_POST["pwd"]))?$_POST["pwd"]:"";
 	$nom = (isset($_POST["nom"]))?$_POST["nom"]:"";
 	$id = (isset($_POST["id"]))?$_POST["id"]:"";
-	if($email !="" && $pwd!="" && $nom!=""){
+	if($email != "" && $pwd != "" && $nom != ""){
 		#verification de l'authentification
 		
-		$utilisateur=new Utilisateur($email,$pwd, $nom);
+		$utilisateur=new Utilisateur($email,$pwd,$nom);
 		$resultat= $utilisateur->saveOrUpdate($id);
 		
-		if($resultat=="exist"){
+		if($resultat == "exist"){
 			header("location:../../admin/utilisateur/adminUtilisateur.php?r=exist");
 			
 		}
